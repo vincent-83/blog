@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'bootswatch-rails'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'devise'

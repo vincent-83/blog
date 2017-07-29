@@ -15,3 +15,8 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+$(document).ready(function(){
+    $("h1").on('click', function(){
+        $(this).css('color', 'red');
+    })
+});
