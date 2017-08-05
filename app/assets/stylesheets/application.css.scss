@@ -37,3 +37,17 @@
 // And finally bootswatch style itself
 @import "bootswatch/paper/bootswatch";
 
+.btn-danger {
+  color: cyan;
+}
+
+.btn-danger:visited {
+  color: cyan;
+}
+
+.navbar-link {
+  height: 25px;
+  width: 100px;
+  font-size: 9px;
+  color: black;
+}
