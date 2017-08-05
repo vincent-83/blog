@@ -19,10 +19,11 @@
   font-style: italic;
 }
 
-.user-logged-in {
+.current-weather {
   color: gainsboro;
   float: right;
   margin-top: 5px;
+  font-size: 12px;
 }
 
 @import "bootstrap-sprockets";

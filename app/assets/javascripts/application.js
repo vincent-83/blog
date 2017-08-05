@@ -16,7 +16,29 @@
 //= require bootstrap-sprockets
 //= require_tree .
 $(document).ready(function(){
-    $("h1").on('click', function(){
-        $(this).css('color', 'red');
+    $("td").on('mouseover', function(){
+        $(this).css('color', getRandomColor());
+    })
+    
+    $(".current-weather").text("Loading...");
+    
+    navigator.geolocation.getCurrentPosition(function(location){
+        $.ajax({
+          url: 'api/v1/weather',
+          type: 'GET',
+          data: { lat: location.coords.latitude, lng: location.coords.longitude},
+          contentType: 'application/json; charset=utf-8',
+          success: function (response) {
+            var displayText = "The current temperature is " + response.currently.temperature + "F";
+            $(".current-weather").text(displayText);
+          },
+          error: function (error) {
+            console.log("Failure: ", error);
+          }
+        });
     })
 });
+
+function getRandomColor(){
+  return "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
+}
